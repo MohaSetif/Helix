@@ -11,8 +11,8 @@
         {imageRef: image3}
     ]
 
-    let width: number = 200
-    let height: number = 300
+    let width: number = 960;
+    let height: number = 540;
 </script>
 
 <main>
