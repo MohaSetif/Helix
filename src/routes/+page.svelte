@@ -21,6 +21,11 @@
 
     let width: number = 960;
     let height: number = 540;
+
+    const getRemainingCount = () => {
+        const remaining = images.length - 8;
+        return remaining > 0 ? `+${remaining}` : '';
+    };
 </script>
 
 <main>
