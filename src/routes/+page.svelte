@@ -21,13 +21,30 @@
 
     let width: number = 960;
     let height: number = 540;
+    let disp: boolean = false;
 
-    const getRemainingCount = () => {
-        const remaining = images.length - 8;
-        return remaining > 0 ? `+${remaining}` : '';
-    };
+    let remaining = images.length - 3;
+
+    const displayHelix = () =>{
+        disp = !disp;
+    }
 </script>
 
-<main>
+{#if !disp}
+    {#each images.slice(0, 4) as image, index}
+        <div class="image-block">
+            <img src={image.imageRef} alt={image.imageRef} width={width / 4} height={height / 4}>
+        </div>
+    {/each}
+    <button on:click={displayHelix}>+ {remaining}</button>  
+{:else}
+    <button class="leave_helix" on:click={displayHelix}>X</button>    
     <Helix images={images} width={width} height={height} />
-</main>
+{/if}
+
+<style>
+    .leave_helix{
+        position: absolute;
+        z-index: 99;
+    }
+</style>
