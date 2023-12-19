@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { fade, slide, scale } from "svelte/transition"
+    import { fade, slide, scale, fly } from "svelte/transition"
     import "../css/images.css"
     export let images = [
         {
@@ -75,7 +75,6 @@
                 <button id="mv_back" on:click={playImagesBackward}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m14 7l-5 5m0 0l5 5"/></svg></button>
                 <button id="play" on:click={togglePlayPause}>
                     {#if isPlaying}
-                        <!-- Pause icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
                             <path fill="currentColor" d="M12 6h-2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m10 0h-2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"/>
                         </svg>
