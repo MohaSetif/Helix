@@ -1,14 +1,18 @@
 <script lang="ts">
     import { fade, slide, scale, fly } from "svelte/transition"
-    import "../css/images.css"
-    export let images = [
-        {
-            imageRef: ""
-        }
-    ]
+    
+    export let images: { imageRef: string }[] = [];
 
-    export let width: number;
-    export let height: number;
+    /**
+     * TODO add css styling in the same svelte file
+     * TODO add global
+     * TODO inject variables
+     * TODO put the package code in the lib and in the main just import the tag
+     */
+    //How to use component driven developement, watch reusable js component.
+
+    export let width: number = 0;
+    export let height: number = 0;
 
     let counter = 0;
     let isPlaying = false;
@@ -99,3 +103,66 @@
         {/if}
     {/if}
 </div>
+
+<style>
+    :global(body){
+        margin: 0;
+    }
+
+    :global(.helix){
+        display: flex;
+        padding: 9.7px;
+        background-color: rgba(0, 0, 0, 0.884);
+    }
+
+    :global(.display_all) {
+        margin: 0;
+        display: block;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.692);
+        border: 1px solid rgb(88, 88, 88);
+        text-align: center;
+        border-radius: 10px;
+        height: 97vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        margin-left: 10px;
+    }
+
+    :global(.img_screen){
+        display: block;
+    }
+
+    :global(.curr_img){
+        border-radius: 4px;
+        border: 2px solid transparent;
+    }
+
+    :global(.curr_img:hover){
+        border: 2px solid rgb(223, 84, 49);
+    }
+
+    :global(.img_selector){
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    :global(.btns){
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    :global(.btns button){
+        border-radius: 10px;
+    }
+
+    :global(.container) {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
