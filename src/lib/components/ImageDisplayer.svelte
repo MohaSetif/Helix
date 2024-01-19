@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { fade, slide, scale, fly } from "svelte/transition"
+    import { slide } from "svelte/transition"
     
     export let images: { imageRef: string }[] = [];
 
@@ -11,8 +11,9 @@
      */
     //How to use component driven developement, watch reusable js component.
 
-    export let width: number = 0;
-    export let height: number = 0;
+    export let width: number;
+    export let height: number;
+    export let frame_rate: number;
 
     let counter = 0;
     let isPlaying = false;
@@ -28,7 +29,7 @@
                 isPlaying = false;
             }
             counter = (counter + 1) % images.length;
-        }, 1000);
+        }, frame_rate);
     }
 
     const togglePlayPause = () => {

@@ -20,8 +20,9 @@
   
     let width: number = 960;
     let height: number = 540;
+    let frame: number = 1000;
 
   </script>
 
-  <Helix images={images} width={width} height={height}/>
+  <Helix images={images} width={width} height={height} frame_rate={frame}/>
   
