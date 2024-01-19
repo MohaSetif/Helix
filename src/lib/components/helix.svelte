@@ -3,8 +3,8 @@
     
     export let images: { imageRef: string }[] = [];
   
-    export let width: number = 0;
-    export let height: number = 0;
+    export let width: number = 960;
+    export let height: number = 540;
     export let frame_rate: number = 1000;
     let disp: boolean = false;
   
@@ -13,6 +13,30 @@
     const displayHelix = () => {
       disp = !disp;
     };
+
+    const getExtension = (filename: string) => {
+      var parts = filename.split('.');
+      return parts[parts.length - 1];
+    }
+
+    const isImage = (images: { imageRef: string }[]): boolean => {
+    for (const image of images) {
+      const ext = getExtension(image.imageRef);
+      switch (ext.toLowerCase()) {
+        case 'jpg':
+        case 'jpeg':
+        case 'png':
+          break;
+        default:
+          return false;
+      }
+    }
+    return true;
+  }
+
+  if (!isImage(images)) {
+    alert("There are no valid files! Only JPG, JPEG, or PNG are allowed.");
+  }
   </script>
   
   {#if !disp}
