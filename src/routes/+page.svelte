@@ -21,8 +21,19 @@
     let width: number = 960;
     let height: number = 540;
     let frame: number = 1000;
+    let backgroundColor: string = "#061109";
+    let iconColor: string = "#90f1a9";
+    let borderColor: string = "#1b4d28";
 
   </script>
 
-  <Helix images={images} width={width} height={height} frame_rate={frame}/>
+  <Helix 
+    images={images} 
+    width={width} 
+    height={height} 
+    frame_rate={frame} 
+    backgroundColor={backgroundColor} 
+    iconColor={iconColor} 
+    borderColor={borderColor}
+  />
   
