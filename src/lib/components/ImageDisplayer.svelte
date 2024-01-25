@@ -76,8 +76,8 @@
     {:else}
         <div class="container">
             <div class="img_screen">
+                <span class="image_index">{counter + 1} out of {images.length}</span>
                 <img src={images[counter].imageRef} alt={images[counter].imageRef} width={width} height={height}>
-                <!-- <span>{counter + 1} out of {images.length}</span> -->
             </div>
             <div class="btns">
                 <button id="image_btn" style={`background-color: ${backgroundColor}; color: ${iconColor}; border: 2px solid ${borderColor}`} on:click={playImagesBackward}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m14 7l-5 5m0 0l5 5"/></svg></button>
@@ -150,7 +150,7 @@
     }
 
     :global(.curr_img:hover){
-        border: 2px solid rgb(223, 84, 49);
+        border: 2px solid rgb(255, 255, 255);
     }
 
     :global(.img_selector){
@@ -176,5 +176,12 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+
+    .image_index{
+        color: white;
+        position: absolute;
+        bottom: 7%;
+        z-index: 99;
     }
 </style>

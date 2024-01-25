@@ -21,9 +21,9 @@
     let width: number = 960;
     let height: number = 540;
     let frame: number = 1000;
-    let backgroundColor: string = "#061109";
-    let iconColor: string = "#90f1a9";
-    let borderColor: string = "#1b4d28";
+    let backgroundColor: string;
+    let iconColor: string;
+    let borderColor: string;
 
   </script>
 
