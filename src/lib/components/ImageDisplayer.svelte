@@ -120,13 +120,13 @@
         margin: 0;
     }
 
-    :global(.helix){
+    .helix{
         display: flex;
         padding: 9.7px;
         background-color: rgba(0, 0, 0, 0.884);
     }
 
-    :global(.display_all) {
+    .display_all{
         margin: 0;
         display: block;
         padding: 15px;
@@ -140,39 +140,39 @@
         margin-left: 10px;
     }
 
-    :global(.img_screen){
+    .img_screen{
         display: block;
     }
 
-    :global(.curr_img){
+    .curr_img{
         border-radius: 4px;
         border: 2px solid transparent;
     }
 
-    :global(.curr_img:hover){
+    .curr_img:hover{
         border: 2px solid rgb(255, 255, 255);
     }
 
-    :global(.img_selector){
+    .img_selector{
         display: inline-block;
         background-color: transparent;
         border: none;
         cursor: pointer;
     }
 
-    :global(.btns){
+    .btns{
         padding: 10px;
         display: flex;
         justify-content: center;
         gap: 50px;
     }
 
-    :global(.btns button){
+    .btns button{
         border-radius: 10px;
         padding: 2.5px;
     }
 
-    :global(.container) {
+    .container{
         margin-left: auto;
         margin-right: auto;
         text-align: center;

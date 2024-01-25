@@ -64,7 +64,7 @@
   {/if}
   
   <style>
-    :global(.image-grid) {
+    .image-grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2px;
@@ -73,12 +73,12 @@
         width: 36.5%;
     }
 
-    :global(.image-block) {
+    .image-block{
         position: relative;
         overflow: hidden;
     }
 
-    :global(.dark-overlay) {
+    .dark-overlay{
         position: absolute;
         top: 0;
         left: 0;
@@ -93,7 +93,7 @@
         border: none;
     }
 
-    :global(.image-block:hover .dark-overlay) {
+    .image-block:hover .dark-overlay{
         border: 1px solid white;
     }
 
@@ -109,11 +109,11 @@
         transition: 0.3s;
     }
 
-    :global(.leave_helix:hover){
+    .leave_helix:hover{
         background-color: rgb(112, 112, 112);
     }
 
-    :global(.x_btn){
+    .x_btn{
         display: flex;
         justify-content: center;
     }
