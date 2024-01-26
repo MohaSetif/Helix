@@ -17,6 +17,7 @@
     export let backgroundColor: string;
     export let iconColor: string;
     export let borderColor: string;
+    export let displayerAnimation: ((node: Element, options?: any) => any);
 
     let counter = 0;
     let isPlaying = false;
@@ -97,7 +98,7 @@
             </div>
         </div>
         {#if showall}
-            <div class="display_all" transition:slide>
+            <div class="display_all" transition:displayerAnimation>
                 {#each images as image, index}
                     <button class="img_selector" on:click={() => updateCounter(index)}>
                         <img class="curr_img" src={image.imageRef} alt={image.imageRef} width={width/4} height={height/4}>

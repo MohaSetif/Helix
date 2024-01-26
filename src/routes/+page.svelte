@@ -7,6 +7,8 @@
     import image6 from "../img/imgbin-computer-icons-postgresql-database-others-SKZhuzreHG59SpDwpJV6M0Yz6.jpg"
     import image7 from "../img/410928403_269841702750227_8888506643555012392_n.jpg"
 	  import Helix from "$lib/components/helix.svelte";
+	import { blur, fly, slide } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
   
     const images = [
       { imageRef: image1 },
@@ -24,6 +26,11 @@
     let backgroundColor: string;
     let iconColor: string;
     let borderColor: string;
+    
+    let displayerAnimation = (node: Element, options?: any) => {
+      options = options || {  };
+      return slide(node, options);
+    };
 
   </script>
 
@@ -35,5 +42,6 @@
     backgroundColor={backgroundColor} 
     iconColor={iconColor} 
     borderColor={borderColor}
+    displayerAnimation={displayerAnimation}
   />
   
