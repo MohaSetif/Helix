@@ -28,7 +28,7 @@
         interval = setInterval(() => {
             console.log(counter);
             if (counter === images.length - 1) {
-                clearInterval(interval); //It stops the interval
+                clearInterval(interval);
                 isPlaying = false;
             }
             counter = (counter + 1) % images.length;
@@ -142,7 +142,7 @@
         background-color: rgba(0, 0, 0, 0.692);
         border: 1px solid rgb(88, 88, 88);
         text-align: center;
-        border-radius: 10px;
+        border-radius: 20px;
         height: 96vh;
         overflow-y: auto;
         box-sizing: border-box;
@@ -211,6 +211,25 @@
         padding: 5px;
         border-radius: 10px;
         transition: background-color 0.3s ease-in-out;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .helix {
+            flex-direction: column;
+        }
+
+        .img_screen {
+            margin-top: 10%;
+        }
+
+        .img_screen img {
+            max-width: 100%;
+        }
+
+        .display_all {
+            display: flex;
+            height: 50%;
+        }
     }
 
 </style>
