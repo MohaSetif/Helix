@@ -121,6 +121,10 @@
         transition: 0.2s;
     }
 
+    .img_screen img {
+        transition: opacity 0.5s ease-in-out;
+    }
+
     :global(body){
         margin: 0;
     }
@@ -167,18 +171,29 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .img_selector:hover {
+        transform: scale(1.1);
     }
 
     .btns{
-        padding: 10px;
+        padding: 7.5px;
         display: flex;
         justify-content: center;
         gap: 50px;
     }
 
-    .btns button{
-        border-radius: 10px;
-        padding: 2.5px;
+    .btns button {
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .btns button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     .container{
