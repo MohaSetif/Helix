@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { slide } from "svelte/transition"
-    
     export let images: { imageRef: string }[] = [];
 
     /**
@@ -18,6 +16,7 @@
     export let iconColor: string;
     export let borderColor: string;
     export let displayerAnimation: ((node: Element, options?: any) => any);
+    export let borderRadius: boolean;
 
     let counter = 0;
     let isPlaying = false;
@@ -69,6 +68,11 @@
         counter = index;
     }
 
+    let imgClass: string = '';
+    if(borderRadius == true){
+        imgClass = 'imgBorder';
+    }
+
 </script>
 
 <div class="helix">
@@ -78,7 +82,7 @@
         <div class="container">
             <div class="img_screen">
                 <span class="image_index">{counter + 1} out of {images.length}</span>
-                <img src={images[counter].imageRef} alt={images[counter].imageRef} width={width} height={height}>
+                <img class={imgClass} src={images[counter].imageRef} alt={images[counter].imageRef} width={width} height={height}>
             </div>
             <div class="btns">
                 <button id="image_btn" style={`background-color: ${backgroundColor}; color: ${iconColor}; border: 2px solid ${borderColor}`} on:click={playImagesBackward}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m14 7l-5 5m0 0l5 5"/></svg></button>
@@ -143,6 +147,10 @@
 
     .img_screen{
         display: block;
+    }
+
+    .imgBorder{
+        border-radius: 15px;
     }
 
     .curr_img{
