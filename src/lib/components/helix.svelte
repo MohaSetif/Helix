@@ -121,5 +121,17 @@
         display: flex;
         justify-content: center;
     }
+
+    @media only screen and (max-width: 768px) {
+        .image-grid {
+          width: 80%;
+          grid-template-columns: 1fr 1fr;
+          gap: 6px;
+        }
+
+        .dark-overlay{
+          padding-right: 20%;
+        }
+    }
   </style>
   

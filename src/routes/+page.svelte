@@ -42,6 +42,6 @@
     iconColor={iconColor} 
     borderColor={borderColor}
     displayerAnimation={displayerAnimation}
-    borderRadius={true}
+    borderRadius={false}
   />
   

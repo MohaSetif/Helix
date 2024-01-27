@@ -73,6 +73,11 @@
         imgClass = 'imgBorder';
     }
 
+    if(window.screen.availWidth < 1300){
+        width /= 1.75;
+        height /= 1.75;
+    }
+
 </script>
 
 <div class="helix">
@@ -213,22 +218,25 @@
         transition: background-color 0.3s ease-in-out;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 1300px) {
         .helix {
             flex-direction: column;
+            row-gap: 40px;
+            height: 97vh;
         }
 
         .img_screen {
             margin-top: 10%;
         }
 
-        .img_screen img {
-            max-width: 100%;
+        .image_index{
+            display: none;
         }
 
         .display_all {
             display: flex;
-            height: 50%;
+            height: 30%;
+            margin-right: 1.7%;
         }
     }
 
