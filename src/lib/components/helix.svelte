@@ -60,7 +60,7 @@
       {/each}
     </div>
   {:else}
-    <button class="leave_helix" on:click={displayHelix}><svg class="x_btn" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 384 512"><path fill="white" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256z"/></svg></button>
+    <button class="leave_helix" on:click={displayHelix}><svg class="x_btn" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 384 512"><path fill="white" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256z"/></svg></button>
     <div>
         <ImageDisplayer images={images} width={width} height={height} frame_rate={frame_rate} backgroundColor={backgroundColor} iconColor={iconColor} borderColor={borderColor} displayerAnimation={displayerAnimation} borderRadius={borderRadius}/>
     </div>
@@ -102,7 +102,7 @@
 
     .leave_helix {
         margin: 10px;
-        padding: 5px;
+        padding: 10px;
         position: absolute;
         z-index: 99;
         background-color: transparent;

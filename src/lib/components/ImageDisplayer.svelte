@@ -154,7 +154,7 @@
     }
 
     .imgBorder{
-        border-radius: 15px;
+        border-radius: 20px;
     }
 
     .curr_img{
@@ -202,10 +202,15 @@
         text-align: center;
     }
 
-    .image_index{
+    .image_index {
         color: white;
+        font-size: 1em;
         position: absolute;
-        bottom: 7%;
-        z-index: 99;
+        bottom: 3.5%;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease-in-out;
     }
+
 </style>
