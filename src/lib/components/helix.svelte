@@ -53,7 +53,7 @@
           <img src={image.imageRef} alt={image.imageRef} width={width / 4} height={height / 4}>
           {#if index === 3}
             <button class="dark-overlay" on:click={displayHelix} style="width: {width / 4}px; height: {height / 4}px;">
-              + {remaining}
+              <span class="counter">+ {remaining}</span>
             </button>
           {/if}
         </div>
@@ -95,6 +95,11 @@
       cursor: pointer;
       opacity: 1;
       border: none;
+    }
+
+    .dark-overlay .counter {
+      display: flex;
+      align-items: center;
     }
 
     .image-block:hover .dark-overlay{
