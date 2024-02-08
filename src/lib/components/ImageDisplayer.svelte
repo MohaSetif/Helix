@@ -73,9 +73,15 @@
         imgClass = 'imgBorder';
     }
 
-    if(window.screen.availWidth < 1300){
-        width /= 1.75;
-        height /= 1.75;
+    $: scaledWidth = width;
+    $: scaledHeight = height;
+
+    $: {
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        if (vw < 1080) {
+            scaledWidth = width / vw * 120;
+            scaledHeight = height / vw * 120;
+        }
     }
 
 </script>
@@ -84,10 +90,12 @@
     {#if images.every(image => !image.imageRef.trim())}
         <p>Nothing to display</p>
     {:else}
+        <br>
+        <br>
         <div class="container">
             <div class="img_screen">
                 <span class="image_index">{counter + 1} out of {images.length}</span>
-                <img class={imgClass} src={images[counter].imageRef} alt={images[counter].imageRef} width={width} height={height}>
+                <img class={imgClass} src={images[counter].imageRef} alt={images[counter].imageRef} width={scaledWidth} height={scaledHeight}>
             </div>
             <div class="btns">
                 <button id="image_btn" style={`background-color: ${backgroundColor}; color: ${iconColor}; border: 2px solid ${borderColor}`} on:click={playImagesBackward}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m14 7l-5 5m0 0l5 5"/></svg></button>
@@ -110,7 +118,7 @@
             <div class="display_all" transition:displayerAnimation>
                 {#each images as image, index}
                     <button class="img_selector" on:click={() => updateCounter(index)}>
-                        <img class="curr_img" src={image.imageRef} alt={image.imageRef} width={width/4} height={height/4}>
+                        <img class="curr_img" src={image.imageRef} alt={image.imageRef} width={scaledWidth/3.5} height={scaledHeight/3.5}>
                     </button>
                 {/each}
             </div>
@@ -135,9 +143,14 @@
     }
 
     .helix{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         display: flex;
-        padding: 9.7px;
-        background-color: rgba(0, 0, 0, 0.884);
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.884);
     }
 
     .display_all{
@@ -154,11 +167,13 @@
         margin-left: 10px;
     }
 
-    .img_screen{
-        display: block;
+    .img_screen {
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
     }
 
-    .imgBorder{
+    .img_screen img {
         border-radius: 20px;
     }
 
@@ -222,7 +237,6 @@
         .helix {
             flex-direction: column;
             row-gap: 40px;
-            height: 97vh;
         }
 
         .img_screen {
@@ -233,10 +247,18 @@
             display: none;
         }
 
-        .display_all {
+        .display_all{
             display: flex;
-            height: 30%;
-            margin-right: 1.7%;
+            height: 20%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-y: scroll;
+            margin-left: 0;
+            margin: 10px;
+        }
+
+        .display_all::-webkit-scrollbar {
+            display: none;
         }
     }
 
