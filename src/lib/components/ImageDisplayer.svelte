@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let images: { imageRef: string }[] = [];
+    export let images: { src: string }[] = [];
 
     /**
      * TODO add css styling in the same svelte file
@@ -87,7 +87,7 @@
 </script>
 
 <div class="helix">
-    {#if images.every(image => !image.imageRef.trim())}
+    {#if images.every(image => !image.src.trim())}
         <p>Nothing to display</p>
     {:else}
         <br>
@@ -95,7 +95,7 @@
         <div class="container">
             <div class="img_screen">
                 <span class="image_index">{counter + 1} out of {images.length}</span>
-                <img class={imgClass} src={images[counter].imageRef} alt={images[counter].imageRef} width={scaledWidth} height={scaledHeight}>
+                <img class={imgClass} src={images[counter].src} alt={images[counter].src} width={scaledWidth} height={scaledHeight}>
             </div>
             <div class="btns">
                 <button id="image_btn" style={`background-color: ${backgroundColor}; color: ${iconColor}; border: 2px solid ${borderColor}`} on:click={playImagesBackward}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m14 7l-5 5m0 0l5 5"/></svg></button>
@@ -118,7 +118,7 @@
             <div class="display_all" transition:displayerAnimation>
                 {#each images as image, index}
                     <button class="img_selector" on:click={() => updateCounter(index)}>
-                        <img class="curr_img" src={image.imageRef} alt={image.imageRef} width={scaledWidth/3.5} height={scaledHeight/3.5}>
+                        <img class="curr_img" src={image.src} alt={image.src} width={scaledWidth/3.5} height={scaledHeight/3.5}>
                     </button>
                 {/each}
             </div>
@@ -154,7 +154,7 @@
     }
 
     .display_all{
-        margin: 0;
+        margin: 10px;
         display: block;
         padding: 15px;
         background-color: rgba(0, 0, 0, 0.692);
@@ -171,9 +171,11 @@
         width: 100%;
         max-width: 100vw;
         height: auto;
+        margin-top: 10px;
+        margin-left: 5px;
     }
 
-    .img_screen img {
+    .imgBorder {
         border-radius: 20px;
     }
 

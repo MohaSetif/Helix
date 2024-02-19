@@ -2,7 +2,7 @@
     import ImageDisplayer from "$lib/components/ImageDisplayer.svelte";
 	import { slide } from "svelte/transition";
     
-    export let images: { imageRef: string }[] = [];
+    export let images: { src: string }[] = [];
   
     export let width: number = 960;
     export let height: number = 540;
@@ -26,9 +26,9 @@
       return parts[parts.length - 1];
     }
 
-    const isImage = (images: { imageRef: string }[]): boolean => {
+    const isImage = (images: { src: string }[]): boolean => {
     for (const image of images) {
-      const ext = getExtension(image.imageRef);
+      const ext = getExtension(image.src);
       switch (ext.toLowerCase()) {
         case 'jpg':
         case 'jpeg':
@@ -50,7 +50,7 @@
     <div class="image-grid">
       {#each images.slice(0, 4) as image, index}
         <div class="image-block" class:index={index}>
-          <img src={image.imageRef} alt={image.imageRef} width={width / 4} height={height / 4}>
+          <img src={image.src} alt={image.src} width={width / 4} height={height / 4}>
           {#if index === 3}
             <button class="dark-overlay" on:click={displayHelix} style="width: {width / 4}px; height: {height / 4}px;">
               <span class="counter">+ {remaining}</span>

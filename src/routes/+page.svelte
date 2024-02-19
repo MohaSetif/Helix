@@ -10,13 +10,13 @@
 	  import { slide } from "svelte/transition";
   
     const images = [
-      { imageRef: image1 },
-      { imageRef: image2 },
-      { imageRef: image3 },
-      { imageRef: image4 },
-      { imageRef: image5 },
-      { imageRef: image6 },
-      { imageRef: image7 }
+      { src: image1 },
+      { src: image2 },
+      { src: image3 },
+      { src: image4 },
+      { src: image5 },
+      { src: image6 },
+      { src: image7 }
     ];
   
     let width: number = 960;
@@ -42,6 +42,6 @@
     iconColor={iconColor} 
     borderColor={borderColor}
     displayerAnimation={displayerAnimation}
-    borderRadius={false}
+    borderRadius={true}
   />
   
