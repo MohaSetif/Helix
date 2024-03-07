@@ -233,7 +233,7 @@
         color: white;
         font-size: 1em;
         position: absolute;
-        bottom: 3.5%;
+        bottom: 11%;
         background-color: rgba(0, 0, 0, 0.6);
         padding: 5px;
         border-radius: 10px;

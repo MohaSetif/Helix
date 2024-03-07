@@ -102,30 +102,24 @@ if (!isImage(images)) {
     overflow: hidden;
   }
 
-  .dark-overlay{
+  .dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    opacity: 1;
     border: none;
+    cursor: pointer;
   }
 
-  .dark-overlay .counter {
-    display: flex;
-    align-items: center;
-  }
-
-  .image-block:hover .dark-overlay{
-      border: 1px solid white;
+  .counter {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
   }
 
   .leave_helix {
@@ -152,10 +146,10 @@ if (!isImage(images)) {
 
   @media only screen and (max-width: 768px) {
       .image-grid {
-        width: 80%;
+        width: 100%;
         height: auto;
         grid-template-columns: 1fr 1fr;
-        gap: 6px;
+        gap: 0.5rem;
       }
   }
 </style>
