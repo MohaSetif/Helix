@@ -80,11 +80,17 @@ if (!isImage(images)) {
 
 <style>
   .image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    position: relative;
-    width: 35%;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .image-grid > div {
+    display: flex; 
+    flex-basis: calc(50% - 40px);  
+    justify-content: center;
+    flex-direction: column;
   }
 
   .image-block {

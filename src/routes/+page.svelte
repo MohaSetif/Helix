@@ -6,6 +6,9 @@
   import image5 from "../img/Screenshot_2023-12-19_18_05_31.png"
   import image6 from "../img/imgbin-computer-icons-postgresql-database-others-SKZhuzreHG59SpDwpJV6M0Yz6.jpg"
   import image7 from "../img/410928403_269841702750227_8888506643555012392_n.jpg"
+  import image8 from "../img/AdobeStock_263959018-scaled.jpeg"
+  import image9 from "../img/5278006-960_546179030-1384488_p.jpg"
+  import image10 from "../img/Screenshot_2023-12-28_19_02_23.png"
   import Helix from "$lib/components/helix.svelte";
   import { slide } from "svelte/transition";
 
@@ -16,16 +19,23 @@
     { src: image4 },
     { src: image5 },
     { src: image6 },
-    { src: image7 }
+    { src: image7 },
+    { src: image8 },
+    { src: image9 },
+    { src: image10 }
   ];
 
-  let width: number = 960;
-  let height: number = 540;
+  /**
+   * TODO: fix imageDisplayer size in the list and page
+  **/ 
+
+  let width: number = 540;
+  let height: number = 960;
   let frame: number = 1000;
   let backgroundColor: string;
   let iconColor: string;
   let borderColor: string;
-  let borderRadius: boolean = false;
+  let borderRadius: boolean = true;
   
   let displayerAnimation = (node: Element, options?: any) => {
     options = options || {  };
@@ -36,8 +46,8 @@
 
 <Helix 
   images={images} 
-  width={width} 
-  height={height} 
+  width={width/2} 
+  height={height/2} 
   frame_rate={frame} 
   backgroundColor={backgroundColor} 
   iconColor={iconColor} 
