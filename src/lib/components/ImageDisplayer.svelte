@@ -156,19 +156,19 @@
         background: rgba(0, 0, 0, 0.884);
     }
 
-    .display_all{
+    .display_all {
         margin: 10px;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 30rem;
         background-color: rgba(0, 0, 0, 0.692);
         border: 1px solid rgb(88, 88, 88);
-        text-align: center;
         border-radius: 20px;
         height: 96vh;
         overflow-y: auto;
         box-sizing: border-box;
         margin-left: 10px;
-        /*Center the images*/
     }
 
     .img_screen {
@@ -186,6 +186,7 @@
     .curr_img{
         border-radius: 4px;
         border: 2px solid transparent;
+        margin: 10px;
     }
 
     .curr_img:hover{
@@ -255,14 +256,14 @@
 
         .display_all{
             display: flex;
+            align-items: center;
             height: 20%;
             -ms-overflow-style: none;
             scrollbar-width: none;
             overflow-y: scroll;
-            margin-left: 0;
-            margin: 10px;
+            margin: 10px auto;
             width: 80%;
-            /*Center it*/
+            flex-direction: row;
         }
 
         .display_all::-webkit-scrollbar {

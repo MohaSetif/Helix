@@ -29,8 +29,8 @@
    * TODO: fix imageDisplayer size in the list and page
   **/ 
 
-  let width: number = 540;
-  let height: number = 960;
+  let width: number = 1500;
+  let height: number = 1000;
   let frame: number = 1000;
   let backgroundColor: string;
   let iconColor: string;
@@ -46,8 +46,8 @@
 
 <Helix 
   images={images} 
-  width={width/2} 
-  height={height/2} 
+  width={width} 
+  height={height} 
   frame_rate={frame} 
   backgroundColor={backgroundColor} 
   iconColor={iconColor} 

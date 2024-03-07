@@ -12,6 +12,9 @@
   export let displayerAnimation: ((node: Element, options?: any) => any);
   export let borderRadius: boolean = false;
 
+  width /= 2;
+  height /= 2;
+
   if(backgroundColor == ""){
     backgroundColor = '#fff'
   }
@@ -81,6 +84,7 @@ if (!isImage(images)) {
 <style>
   .image-grid {
     display: flex;
+    width: 30%;
     gap: 0.5rem;
     flex-wrap: wrap;
     flex-direction: row;
